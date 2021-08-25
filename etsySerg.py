@@ -2,15 +2,15 @@
 
 import requests
 from bs4 import BeautifulSoup
-url1 = "https://www.proartsuppliesusa.com/shop/11241211/watercolors-set"
+url1 = "https://www.saltlakevalleychryslerdodgeramjeep.com/new-vehicles/grand-cherokee/#action=im_ajax_call&perform=get_results&page=1&model%5B%5D=Grand+Cherokee+L"
 list2 = []
 html_doc = requests.get(url1)
 soup = BeautifulSoup(html_doc.text, 'html.parser')
-discription = soup.find_all(class_=["title", "price"])
-for price in discription:
-    str1=price.text.replace('\n','')
-    str2=str1.rstrip(' ')
-    list2.append(str2.lstrip(' '))
+discription2 = soup.find_all(class_="vehicle-title clearfix")
 
-print(list2)
+#discription2 = soup.find("a", class_="save-things save-things-save") ["data-title"]
+print (discription2)
+
+
+
 
